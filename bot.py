@@ -6,12 +6,10 @@ import os
 reddit=praw.Reddit('Bot1')
 # subreddit=reddit.subreddit("globaloffensive")
 # for submission in subreddit.hot(limit=5):
-# 	print("Title: ", submission.title)
-	
+# 	print("Title: ", submission.title)	
 # 	print("Score: ", submission.score)
 # 	print("---------------------------------\n")
 
-# reddit.login("Bot_county", "redditgod")
 
 # Have we run this code before? If not, create an empty list
 if not os.path.isfile("posts_replied_to.txt"):
@@ -32,7 +30,6 @@ for submission in subreddit.hot(limit=20):
    
     # If we haven't replied to this post before
     if submission.id not in posts_replied_to:
-        print("ff")
         # Do a case insensitive search
         if re.search("bots", submission.title, re.IGNORECASE):
             # Reply to the post
